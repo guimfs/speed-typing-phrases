@@ -15,13 +15,13 @@ If your phrase is incorrect or incomplete, you will not be able to press enter. 
 ###### *Examples*
 
 *This is how program will look*
-![Example_1](.\\images\\example1.png)
+![Example_1](./images/example1.png)
 
 *This happens when you type the exactly same phrase*
-![Example_2](.\\images\\example2.png)
+![Example_2](./images/example2.png)
 
 *This happens when you do not type the exactly same phrase*
-![Example_3](.\\images\\example3.png)
+![Example_3](./images/example3.png)
 
 
 
