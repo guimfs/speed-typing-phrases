@@ -2,30 +2,59 @@ import tkinter as tk
 import random
 import time
 import threading
+from textwrap import wrap
+
 
 class Interface:
 
     def __init__(self):
         self.root = tk.Tk()
         self.root.title('Speed Typing Test')
-        self.root.geometry('600x400')
+        self.root.attributes('-fullscreen', True)
+        self.root.config(bg="#CDAA7D")
+        self.root.bind("<Escape>", lambda event: self.root.attributes('-fullscreen', False))
 
         self.phrases = open('phrases.txt', 'r').read().split('\n')
 
         self.frame = tk.Frame(self.root)
+        self.frame.config(bg="#CDAA7D")
 
-        self.label = tk.Label(self.frame, text=random.choice(self.phrases))
-        self.label.grid(row=0, column=0, columnspan=2, padx=5, pady=10)
+        self.title = tk.Label(self.frame, 
+                            text="Type as fast as you can!", 
+                            font=("Gill Sans Ultra Bold", 25),
+                            bg="#CDAA7D",
+                            fg="#8B1A1A")
+        self.title.grid(row=0, column=0, columnspan=2, padx=5, pady=70)
 
-        self.speed = tk.Label(self.frame, text='0.00 Words per second\n0.00 Words per minute')
-        self.speed.grid(row=2, column=0, columnspan=2, padx=5, pady=10)
+        self.label = tk.Label(self.frame, 
+                            text=random.choice(self.phrases), 
+                            font=("Gill Sans Ultra Bold", 25),
+                            bg="#CDAA7D")
+        self.label.grid(row=1, column=0, columnspan=2, padx=5, pady=10)
 
-        self.input = tk.Entry(self.frame, width=40)
-        self.input.grid(row=1, column=0, columnspan=2, padx=5, pady=10)
+        self.speed = tk.Label(self.frame, 
+                            text='0.00 Words per second\n0.00 Words per minute', 
+                            font=("Gill Sans Ultra Bold", 20),
+                            bg="#CDAA7D")
+        self.speed.grid(row=3, column=0, columnspan=2, padx=5, pady=10)
+
+        self.input = tk.Entry(self.frame, width=40, font=("Gill Sans Ultra Bold", 20))
+        self.input.grid(row=2, column=0, columnspan=2, padx=5, pady=10)
         self.input.bind("<KeyPress>", self.start)
 
-        self.reset = tk.Button(self.frame, text='Reset', command=self.reset)
-        self.reset.grid(row=3, column=0, columnspan=2, padx=5, pady=10)
+        self.reset = tk.Button(self.frame,
+                            text='Reset', 
+                            command=self.reset,
+                            bg="#9C9C9C",
+                            padx=100,
+                            pady=25,
+                            font=("Gill Sans Ultra Bold", 15),
+                            activebackground='#345',
+                            activeforeground='white',
+                            borderwidth=3,
+                            relief='raised',
+                            )
+        self.reset.grid(row=4, column=0, columnspan=2, padx=5, pady=10)
 
         self.frame.pack(expand=True)
 
@@ -37,7 +66,7 @@ class Interface:
 
     def start(self, event):
         if not self.running:
-            if not event.keycode in [16, 17, 18]: #Shift, Alt, Control
+            if not event.keycode in [16, 17, 18, 27]: #Shift, Alt, Control, Esc
                 self.running = True
                 t = threading.Thread(target=self.time_thread)
                 t.start()
@@ -60,9 +89,11 @@ class Interface:
     def reset(self):
         self.running = False
         self.counter = 0
-        self.speed.config(text='Speed: \n0.00 CPS\n0.00 CPM')
+        self.speed.config(text='0.00 Words per second\n0.00 Words per minute')
         self.label.config(text=random.choice(self.phrases))
         self.input.delete(0, tk.END)
 
-Interface()
+
+if __name__ == '__main__':
+    Interface()
 
