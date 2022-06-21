@@ -80,8 +80,8 @@ class Interface:
 
     def time_thread(self):
         while self.running:
-            time.sleep(0.1)
-            self.counter += 0.1
+            time.sleep(0.01)
+            self.counter += 0.01
             wps = len(self.input.get().split(" ")) / self.counter
             wpm = wps * 60
             self.speed.config(text=f'{wps:.2f} Words per second\n {wpm:.2f} Words per minute')
