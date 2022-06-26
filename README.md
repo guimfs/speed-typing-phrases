@@ -15,13 +15,10 @@ If your phrase is incorrect or incomplete, you will not be able to press enter. 
 #### *Examples*
 
 *This is how program will look*
-![Example_1](./images/example1.png = 683x384)
+![Example_1](src="./images/example1.png",  width="683" height="384)
 
 *This happens when you type the exactly same phrase*
-![Example_2](./images/example2.png = 683x384)
+![Example_2](src="./images/example2.png",  width="683" height="384)
 
 *This happens when you do not type the exactly same phrase*
-![Example_3](./images/example3.png = 683x384)
-
-
-
+![Example_3](src="./images/example3.png",  width="683" height="384)
