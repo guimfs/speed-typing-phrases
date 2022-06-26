@@ -2,7 +2,7 @@ import tkinter as tk
 import random
 import time
 import threading
-from textwrap import wrap
+from sys import exit
 
 
 class Interface:
@@ -12,7 +12,7 @@ class Interface:
         self.root.title('Speed Typing Test')
         self.root.attributes('-fullscreen', True)
         self.root.config(bg="#CDAA7D")
-        self.root.bind("<Escape>", lambda event: self.root.attributes('-fullscreen', False))
+        self.root.bind("<Escape>", lambda event: exit())
 
         self.phrases = open('phrases.txt', 'r').read().split('\n')
 
@@ -96,4 +96,3 @@ class Interface:
 
 if __name__ == '__main__':
     Interface()
-
