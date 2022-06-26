@@ -13,9 +13,7 @@ class Interface:
         self.root.attributes('-fullscreen', True)
         self.root.config(bg="#CDAA7D")
         self.root.bind("<Escape>", lambda event: exit())
-
         self.phrases = open('phrases.txt', 'r').read().split('\n')
-
         self.frame = tk.Frame(self.root)
         self.frame.config(bg="#CDAA7D")
 
@@ -57,11 +55,9 @@ class Interface:
         self.reset.grid(row=4, column=0, columnspan=2, padx=5, pady=10)
 
         self.frame.pack(expand=True)
-
         self.counter = 0
-
         self.running = False
-
+        self.input.focus_set()
         self.root.mainloop()
 
     def start(self, event):
