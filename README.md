@@ -12,16 +12,16 @@ After the whole sentence had been typed and pressing **enter** the counter will 
 
 If your phrase is incorrect or incomplete, you will not be able to press enter. The text will indicate the colors ***red for incorrect*** and ***black for incomplete.***
 
-###### *Examples*
+#### *Examples*
 
 *This is how program will look*
-![Example_1](./images/example1.png)
+![Example_1](./images/example1.png = 683x384)
 
 *This happens when you type the exactly same phrase*
-![Example_2](./images/example2.png)
+![Example_2](./images/example2.png = 683x384)
 
 *This happens when you do not type the exactly same phrase*
-![Example_3](./images/example3.png)
+![Example_3](./images/example3.png = 683x384)
 
 
 
