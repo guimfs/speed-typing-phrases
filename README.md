@@ -23,4 +23,4 @@ If your phrase is incorrect or incomplete, you will not be able to press enter. 
 *This happens when you do not type the exactly same phrase*
 ![Example_3](./images/example3.png)
 
-<img src="./images/example1.png" width="683", height="384>
+<img src="./images/example1.png", width="683", height="384>
