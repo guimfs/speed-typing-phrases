@@ -12,7 +12,7 @@ After the whole sentence had been typed and pressing ***enter***, the counter wi
 
 If your phrase is incorrect or incomplete, you will not be able to press enter. The color text will indicate ***red for incorrect***, ***black for incomplete.*** and ***green for correct***.
 
-To quit the game. Just press ***esc key***.
+To quit the game just press ***esc key***.
 
 ### *Examples*
 
